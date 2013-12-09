@@ -1,0 +1,12 @@
+#image{
+    text-align: center;
+}
+#info{
+    margin-top: 20px;
+}
+
+.ui-icon-loading  {
+    background: url("../images/ajax-loader.gif") no-repeat;    
+    height: 5.75em !important;    
+    width: 4.75em !important;
+}

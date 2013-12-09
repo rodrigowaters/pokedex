@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Pokemon</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
+        <link rel="stylesheet" href="css/jquery.mobile-1.4.0-rc.1.css">
+        <link rel="stylesheet" href="css/custom.css">
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.0-rc.1.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </head>
+    <body>
+        <div id="dashboard" data-role="page" class="ui-responsive-panel">
+            <div data-role="panel" id="menu" data-position="left" data-display="reveal" data-theme="a">
+
+            </div>
+            <div id="header" data-role="header" data-position="fixed">
+                <!--<a href="#menu" class="ui-btn ui-shadow ui-corner-all ui-btn-inline" data-icon="gear" data-iconpos="notext">Menu</a>-->
+                <h1>PokeDeck</h1>
+            </div>
+            <div id="conteiner" role="main" class="ui-content">
+                <ul data-role="listview" data-filter="true" data-filter-placeholder="Procurar" data-inset="true">
+                    
+                </ul>
+            </div>
+        </div>
+        <div data-role="page" id="detals" data-theme="a">
+            <div data-role="header" data-position="fixed">
+                <a href="#dashboard" data-transition="flow">Voltar</a>
+                <h1>Deails</h1>
+            </div>
+            <div role="main" class="ui-content">
+                <div id="image">
+                    <img src="" alt="" />
+                </div>
+                <div id="info">
+                    <ul data-role="listview" data-inset="true">
+                        <li data-role="list-divider">Informações</li>
+                        <li class="ui-field-contain"><label for="number">number:</label> <input name="number" id="number" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="typeOne">typeOne:</label> <input name="typeOne" id="typeOne" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="typeTwo">typeTwo:</label> <input name="typeTwo" id="typeTwo" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="species">species:</label> <input name="species" id="species" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="height">height:</label> <input name="height" id="height" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="weight">weight:</label> <input name="weight" id="weight" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="abilitieOne">abilitieOne:</label> <input name="abilitieOne" id="abilitieOne" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="abilitieTwo">abilitieTwo:</label> <input name="abilitieTwo" id="abilitieTwo" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="evYield">evYield:</label> <input name="evYield" id="evYield" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="catchRate">catchRate:</label> <input name="catchRate" id="catchRate" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="baseHappiness">baseHappiness:</label> <input name="baseHappiness" id="baseHappiness" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="baseExp">baseExp:</label> <input name="baseExp" id="baseExp" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="growthRate">growthRate:</label> <input name="growthRate" id="growthRate" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="eggGroupOne">eggGroupOne:</label> <input name="eggGroupOne" id="eggGroupOne" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="eggGroupTwo">eggGroupTwo:</label> <input name="eggGroupTwo" id="eggGroupTwo" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="gender">gender:</label> <input name="gender" id="gender" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="eggCycles">eggCycles:</label> <input name="eggCycles" id="eggCycles" readonly="" type="text"></li>
+                        <li class="ui-field-contain"><label for="evoSize">evoSize:</label> <input name="evoSize" id="evoSize" readonly="" type="text"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
