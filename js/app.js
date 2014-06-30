@@ -1,39 +1,47 @@
-var pokedeck = {};
-function loading() {
-}
-function back() {
-    $('#view').removeClass('current').addClass('left');
-    $('#index').removeClass('left').addClass('current');
-}
-function view(id) {
-    var pokemon = pokedeck[id];
-    var form = $('#view');
-    form.find("header h1").text(pokemon.name);
-    form.find('article header img').prop('src', 'images/pokemons/' + pokemon.link);
-    for (var i in pokemon) {
-        form.find('article #' + i).val(pokemon[i]);
-    }
-    $('#view').addClass('current');
-    $('#index').addClass('left');
-}
 $(document).ready(function() {
-    $.getJSON('pokemon.json', {}, function(json) {
-        pokedeck = json[0];
-        for (var i in pokedeck) {
-            var html = '<li onclick="view(' + i + ')"><aside class="pack-end"><p>#' + (pokedeck[i].number) + '</p></aside><a href="#"><p>' + (pokedeck[i].name) + '</p></a></li>';
-            $('#index article ul').append(html);
-        }
-        $('#index form input').keyup(function() {
-            var text = $.trim($(this).val());
-            if (text) {
-                $('#index article ul li').hide();
-                $("#index article ul li a p:first-child:contains('" + (text.toUpperCase()) + "')").closest('li').fadeIn();
-            } else {
-                $('#index article ul li').show();
+    var $pokemons = {};
+    var $page_main = $('main#main');
+    var $page_view = $('main#view');
+    $.getJSON("pokemon.json", function($data) {
+        var $item = [];
+        $.each($data, function($number, $pokemon) {
+            $pokemons[$number] = $pokemon;
+            var $template = '<li id_pokemon="' + $number + '" class="item item-avatar item-button-right"><img src="images/pokemons/' + $pokemon.link + '"><h2>' + ($pokemon.name).toUpperCase() + '</h2><p>' + $pokemon.number + '</p><button class="button button-positive"><i class="icon ion-arrow-right-a"></i></button></li>';
+            $item.push($template);
+        });
+        $("<ul/>", {
+            "class": "list",
+            html: $item.join("")
+        }).appendTo("main#main article").find("li.item").click(function() {
+            var $nodeIndex = $(this).attr('id_pokemon');
+            var $pokemon = $pokemons[$nodeIndex];
+            var $audio = 1;
+            
+            var $content_to_append = '<li class="item item-divider">Descrição</li><li class="item">' + $pokemon.description + '</li>';
+            $content_to_append += '<li class="item item-divider">Ator</li><li class="item"">' + $pokemon.actor + '</li>';
+
+            $page_view.find('header div.title').html($pokemon.name);
+            $page_view.find('img').prop('src', 'images/pokemons/' +$pokemon.link);
+            for (var i in $pokemon) {
+                $page_view.find('article #' + i).val($pokemon[i]);
             }
+
+            $page_view.find('li.list').html($content_to_append);
+            $page_main.removeClass('left_to_main').addClass('main_to_left');
+            $page_view.removeClass('main_to_right').addClass('right_to_main');
         });
-        $('#index form button').click(function() {
-            $('#index article ul li').show();
-        });
+    });
+    $page_main.find('header.bar-subheader div.bar-header button').click(function() {
+        var $query = $.trim($page_main.find('header.bar-subheader div.bar-header input').val());
+        if ($query) {
+            $page_main.find('article ul li').hide();
+            $page_main.find("article ul li h2:contains('" + ($query.toUpperCase()) + "')").closest('li').fadeIn();
+        } else {
+            $page_main.find('article ul li').show();
+        }
+    });
+    $page_view.find('header button').click(function(){
+        $page_main.removeClass('main_to_left').addClass('left_to_main');
+        $page_view.removeClass('right_to_main').addClass('main_to_right');
     });
 });

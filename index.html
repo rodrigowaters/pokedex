@@ -1,81 +1,60 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Pokedex</title>
         <meta charset="UTF-8">
-        <title>Pokemon</title>
-        <meta name="viewport" content="width=device-width, user-scalable=no" />
+        <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
-        <!-- Building blocks -->
-        <link rel="stylesheet" href="css/action_menu.css">
-        <link rel="stylesheet" href="css/buttons.css">
-        <link rel="stylesheet" href="css/confirm.css">
-        <link rel="stylesheet" href="css/edit_mode.css">
-        <link rel="stylesheet" href="css/headers.css">
-        <link rel="stylesheet" href="css/input_areas.css">
-        <link rel="stylesheet" href="css/status.css">
-        <link rel="stylesheet" href="css/switches.css">
-        <link rel="stylesheet" href="css/drawer.css">
-        <link rel="stylesheet" href="css/lists.css">
-        <link rel="stylesheet" href="css/progress_activity.css">
-        <link rel="stylesheet" href="css/scrolling.css">
-        <link rel="stylesheet" href="css/seekbars.css">
-        <link rel="stylesheet" href="css/tabs.css">
-        <link rel="stylesheet" href="css/toolbars.css">
-        <!-- Transitions -->
-        <link rel="stylesheet" href="css/transitions.css">
-        <!-- Util CSS: some extra tricks -->
-        <link rel="stylesheet" href="css/util.css">
+        <link rel="stylesheet" href="css/ionic.min.css">
         <link rel="stylesheet" href="css/custom.css">
         <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
     </head>
     <body>
-        <section class="skin-dark" id="index" data-position="current" role="region">
-            <header>
-                <h1>Pokedex</h1>
+        <main id="main" class="">
+            <header class="bar bar-header">
+              <div class="h1 title">Pokedex</div>
             </header>
-            <header>
-                <form action="#">
-                    <input placeholder="Pesquisar" type="text" required="required" />
-                    <button type="reset">Remove text</button>
-                </form>
+            <header class="bar bar-subheader bar-secondary">
+                <div class="bar bar-header item-input-inset">
+                    <label class="item-input-wrapper">
+                    <i class="icon ion-ios7-search placeholder-icon"></i>
+                    <input type="search" data-l10n-id="search_text" placeholder="">
+                    </label>
+                    <button class="button button-clear">Procurar</button>
+                </div>
             </header>
-            <article class="scrollable header">
-                <div data-type="list">
-                    <ul>
-
-                    </ul>
+            <article class="content has-subheader">
+            </article>
+        </main>
+        <main id="view">
+            <header class="bar bar-header">
+              <button class="button icon ion-ios7-arrow-back"></button>
+              <div class="h1 title">{title}</div>
+            </header>
+            <article class="content has-header">
+                <img src="" alt="" />
+                <div class="list">
+                    <label class="item item-input item-stacked-label"><span class="input-label">number:</span><input name="number" id="number" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">typeOne:</span><input name="typeOne" id="typeOne" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">typeTwo:</span><input name="typeTwo" id="typeTwo" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">species:</span><input name="species" id="species" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">height:</span><input name="height" id="height" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">weight:</span><input name="weight" id="weight" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">abilitieOne:</span><input name="abilitieOne" id="abilitieOne" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">abilitieTwo:</span><input name="abilitieTwo" id="abilitieTwo" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">evYield:</span><input name="evYield" id="evYield" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">catchRate:</span><input name="catchRate" id="catchRate" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">baseHappiness:</span><input name="baseHappiness" id="baseHappiness" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">baseExp:</span><input name="baseExp" id="baseExp" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">growthRate:</span><input name="growthRate" id="growthRate" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">eggGroupOne:</span><input name="eggGroupOne" id="eggGroupOne" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">eggGroupTwo:</span><input name="eggGroupTwo" id="eggGroupTwo" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">gender:</span><input name="gender" id="gender" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">eggCycles:</span><input name="eggCycles" id="eggCycles" readonly="" type="text"></label>
+                    <label class="item item-input item-stacked-label"><span class="input-label">evoSize:</span><input name="evoSize" id="evoSize" readonly="" type="text"></label>
                 </div>
             </article>
-        </section> 
-        <section class="skin-dark" role="region" id="view" data-position="right">
-            <header class="fixed">
-                <a onclick="back()" href="#"><span class="icon icon-back">back</span></a>
-                <h1></h1>
-            </header>
-            <article class="content scrollable header">
-                <header>
-                    <img src="" alt=""/>
-                </header>
-                <fieldset><legend>number:</legend><section><p><input name="number" id="number" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>typeOne:</legend><section><p><input name="typeOne" id="typeOne" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>typeTwo:</legend><section><p><input name="typeTwo" id="typeTwo" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>species:</legend><section><p><input name="species" id="species" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>height:</legend><section><p><input name="height" id="height" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>weight:</legend><section><p><input name="weight" id="weight" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>abilitieOne:</legend><section><p><input name="abilitieOne" id="abilitieOne" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>abilitieTwo:</legend><section><p><input name="abilitieTwo" id="abilitieTwo" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>evYield:</legend><section><p><input name="evYield" id="evYield" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>catchRate:</legend><section><p><input name="catchRate" id="catchRate" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>baseHappiness:</legend><section><p><input name="baseHappiness" id="baseHappiness" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>baseExp:</legend><section><p><input name="baseExp" id="baseExp" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>growthRate:</legend><section><p><input name="growthRate" id="growthRate" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>eggGroupOne:</legend><section><p><input name="eggGroupOne" id="eggGroupOne" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>eggGroupTwo:</legend><section><p><input name="eggGroupTwo" id="eggGroupTwo" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>gender:</legend><section><p><input name="gender" id="gender" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>eggCycles:</legend><section><p><input name="eggCycles" id="eggCycles" readonly="" type="text"></p></section></fieldset>
-                <fieldset><legend>evoSize:</legend><section><p><input name="evoSize" id="evoSize" readonly="" type="text"></p></section></fieldset>
-            </article>
-        </section>
-        <script type="text/javascript" src="js/app.js"></script>
+        </main>
     </body>
 </html>
