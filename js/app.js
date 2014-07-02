@@ -2,6 +2,7 @@ $(document).ready(function() {
     var $pokemons = {};
     var $page_main = $('main#main');
     var $page_view = $('main#view');
+    $('#loading').show();
     $.getJSON("pokemon.json", function($data) {
         var $item = [];
         $.each($data, function($number, $pokemon) {
@@ -30,6 +31,7 @@ $(document).ready(function() {
             $page_main.removeClass('left_to_main').addClass('main_to_left');
             $page_view.removeClass('main_to_right').addClass('right_to_main');
         });
+        $('#loading').hide();
     });
     $page_main.find('header.bar-subheader div.bar-header button').click(function() {
         var $query = $.trim($page_main.find('header.bar-subheader div.bar-header input').val());

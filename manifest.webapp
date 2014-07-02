@@ -1,6 +1,6 @@
 {
     "name": "Pokedex",
-    "version": "1.0",
+    "version": "2.0",
     "description": "App de pokemon para Firefox OS",
     "launch_path": "/index.html",
     "fullscreen": "true",
