@@ -1,61 +1,47 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Pokedex</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <link rel="shortcut icon" type="image/png" href="images/favicon.ico" />
-        <link rel="stylesheet" href="css/ionic.min.css">
-        <link rel="stylesheet" href="css/custom.css">
-        <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/app.js"></script>
-    </head>
-    <body>
-        <div id="loading"></div>
-    <main id="main" class="">
-        <header class="bar bar-header">
-            <div class="h1 title">Pokedex</div>
-        </header>
-        <header class="bar bar-subheader bar-secondary">
-            <div class="bar bar-header item-input-inset">
-                <label class="item-input-wrapper">
-                    <i class="icon ion-ios7-search placeholder-icon"></i>
-                    <input type="search" data-l10n-id="search_text" placeholder="">
-                </label>
-                <button class="button button-clear">Procurar</button>
-            </div>
-        </header>
-        <article class="content has-subheader">
-        </article>
-    </main>
-    <main id="view">
-        <header class="bar bar-header">
-            <button class="button icon ion-ios7-arrow-back"></button>
-            <div class="h1 title">{title}</div>
-        </header>
-        <article class="content has-header">
-            <img src="" alt="" />
-            <div class="list">
-                <label class="item item-input item-stacked-label"><span class="input-label">number:</span><input name="number" id="number" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">typeOne:</span><input name="typeOne" id="typeOne" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">typeTwo:</span><input name="typeTwo" id="typeTwo" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">species:</span><input name="species" id="species" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">height:</span><input name="height" id="height" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">weight:</span><input name="weight" id="weight" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">abilitieOne:</span><input name="abilitieOne" id="abilitieOne" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">abilitieTwo:</span><input name="abilitieTwo" id="abilitieTwo" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">evYield:</span><input name="evYield" id="evYield" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">catchRate:</span><input name="catchRate" id="catchRate" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">baseHappiness:</span><input name="baseHappiness" id="baseHappiness" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">baseExp:</span><input name="baseExp" id="baseExp" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">growthRate:</span><input name="growthRate" id="growthRate" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">eggGroupOne:</span><input name="eggGroupOne" id="eggGroupOne" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">eggGroupTwo:</span><input name="eggGroupTwo" id="eggGroupTwo" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">gender:</span><input name="gender" id="gender" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">eggCycles:</span><input name="eggCycles" id="eggCycles" readonly="" type="text"></label>
-                <label class="item item-input item-stacked-label"><span class="input-label">evoSize:</span><input name="evoSize" id="evoSize" readonly="" type="text"></label>
-            </div>
-        </article>
-    </main>
+<html lang="pt-br" ng-app="pokedex">
+<head>
+    <title>Pokedex</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
+    <style>
+        md-input-container .md-errors-spacer {
+            min-height: 0;
+        }
+    </style>
+</head>
+<body ng-controller="PokemonsCtrl" ng-cloak layout="column">
+
+<md-toolbar class="md-warn">
+    <div class="md-toolbar-tools">
+        <h2 class="md-flex">Pokedex</h2>
+    </div>
+</md-toolbar>
+
+<md-content flex>
+
+    <md-list flex>
+
+        <md-list-item ng-repeat="pokemon in pokemons track by $index" ng-click="showPokemon($index + 1)" class="noright">
+            <img alt="{{ pokemon.name }}" ng-src="images/pokemons/{{ pokemon.link }}" class="md-avatar" />
+            <p>{{ pokemon.name }}</p>
+            <md-divider></md-divider>
+        </md-list-item>
+
+    </md-list>
+
+</md-content>
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="bower_components/angular-animate/angular-animate.min.js"></script>
+<script src="bower_components/angular-aria/angular-aria.min.js"></script>
+<script src="bower_components/angular-material/angular-material.min.js"></script>
+
+<script type="text/javascript" src="js/app.js"></script>
+<script type="text/javascript" src="js/controller.js"></script>
+<script type="text/javascript" src="js/services.js"></script>
+
 </body>
 </html>
