@@ -9,27 +9,27 @@ import {PokedexService} from "../services/pokedex.service";
 })
 export class DetailPage {
 
-    private name: string;
-    private number: string;
-    private link: string;
-    private typeOne: string;
-    private typeTwo: string;
-    private species: string;
-    private height: string;
-    private weight: string;
-    private abilitieOne: string;
-    private abilitieTwo: string;
-    private evYield: string;
-    private catchRate: string;
-    private baseHappiness: string;
-    private baseExp: string;
-    private growthRate: string;
-    private eggGroupOne: string;
-    private eggGroupTwo: string;
-    private gender: string;
-    private eggCycles: string;
-    private evoSize: string;
-    private evolutions: {};
+    public name: string;
+    public number: string;
+    public link: string;
+    public typeOne: string;
+    public typeTwo: string;
+    public species: string;
+    public height: string;
+    public weight: string;
+    public abilitieOne: string;
+    public abilitieTwo: string;
+    public evYield: string;
+    public catchRate: string;
+    public baseHappiness: string;
+    public baseExp: string;
+    public growthRate: string;
+    public eggGroupOne: string;
+    public eggGroupTwo: string;
+    public gender: string;
+    public eggCycles: string;
+    public evoSize: string;
+    public evolutions: {};
 
     constructor(
         private route: ActivatedRoute,

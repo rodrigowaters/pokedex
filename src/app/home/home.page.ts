@@ -9,7 +9,7 @@ import {PokedexService} from "../services/pokedex.service";
 })
 export class HomePage {
 
-    private pokemons = {};
+    public pokemons = {};
     private loading: HTMLIonLoadingElement;
 
     constructor(
