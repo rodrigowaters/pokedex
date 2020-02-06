@@ -8,7 +8,7 @@ cache:
 
 before_install:
   - npm install -g @angular/cli
-  - npm install -g ionic@latest
+  - npm install -g @ionic/cli
 
 install:
   - npm install
