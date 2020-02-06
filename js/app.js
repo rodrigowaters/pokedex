@@ -1,1 +1,0 @@
-angular.module('pokedex', ['ngMaterial', 'pokedex.controllers', 'pokedex.services']);
