@@ -1,0 +1,100 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-buttons slot="start">
+            <ion-back-button></ion-back-button>
+        </ion-buttons>
+        <ion-title>
+            {{name}}
+        </ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-card>
+        <ion-card-header>
+            <img src="assets/pokemons/{{link}}" loading="lazy" [alt]="name">
+            <ion-card-title>{{name}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+
+            <ion-item-group>
+
+                <ion-item-divider>
+                    <ion-label>Informações</ion-label>
+                </ion-item-divider>
+
+                <ion-item>
+                    <ion-label> number : {{number}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> typeOne : {{typeOne}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> typeTwo : {{typeTwo}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> species : {{species}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> height : {{height}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> weight : {{weight}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> abilitieOne : {{abilitieOne}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> abilitieTwo : {{abilitieTwo}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> evYield : {{evYield}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> catchRate : {{catchRate}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> baseHappiness : {{baseHappiness}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> baseExp : {{baseExp}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> growthRate : {{growthRate}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> eggGroupOne : {{eggGroupOne}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> eggGroupTwo : {{eggGroupTwo}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> gender : {{gender}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> eggCycles : {{eggCycles}} </ion-label>
+                </ion-item>
+                <ion-item>
+                    <ion-label> evoSize : {{evoSize}} </ion-label>
+                </ion-item>
+
+                <ion-item-divider>
+                    <ion-label>Evoluções</ion-label>
+                </ion-item-divider>
+                <ion-item *ngFor="let evolution of evolutions | keyvalue">
+                    <ion-avatar slot="start">
+                        <img src="assets/pokemons/{{evolution.value.img}}" loading="lazy" [alt]="evolution.value.name">
+                    </ion-avatar>
+                    <ion-label>
+                        <h2>Nome : {{evolution.value.name}}</h2>
+                        <h3>Level : {{evolution.value.lvl}}</h3>
+                    </ion-label>
+                </ion-item>
+
+            </ion-item-group>
+
+        </ion-card-content>
+    </ion-card>
+
+</ion-content>
