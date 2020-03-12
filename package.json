@@ -13,7 +13,8 @@
     "app:run": "ionic cordova run",
     "app:sign": "jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore pokedex.keystore platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk pokedex",
     "app:create": "zipalign -v 4 platforms/android/app/build/outputs/apk/release/app-release-unsigned.apk pokedex.apk",
-    "deploy": "ionic build --prod -- --base-href http://rodrigowaters.github.io/pokedex/ && npx angular-cli-ghpages --dir=www --name='Rodrigo Silva' --email=rdrgwtrs@gmail.com",
+    "deploy": "ionic build --prod -- --base-href http://rodrigowaters.github.io/pokedex/",
+    "deploy_gh": "npx angular-cli-ghpages --dir=www --name='Rodrigo Silva' --email=rdrgwtrs@gmail.com",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
