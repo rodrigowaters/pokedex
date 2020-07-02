@@ -38,7 +38,7 @@
     "cordova-plugin-nativeaudio": "3.0.9",
     "cordova-sqlite-storage": "5.0.0",
     "core-js": "3.6.5",
-    "rxjs": "6.5.5",
+    "rxjs": "6.6.0",
     "tslib": "2.0.0",
     "zone.js": "0.10.3"
   },
